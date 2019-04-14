@@ -73,7 +73,7 @@ let migrationFiles = fs.readdirSync(migrationsDir)
 
 MigrationsModel.sync().then(() => {
     MigrationsModel.findOne({
-        order: [ [ 'createdAt', 'DESC' ] ],
+        order: [ [ 'id', 'DESC' ] ],
     }).then((lm) => {
         const lastMigration = lm
             ? {
